@@ -17,11 +17,11 @@ export async function POST(req: Request) {
     return new Response("Bad request", { status: 400 });
   }
 
-  const payload = await req.json();
-  const body = JSON.stringify(payload);
-  const webhookSecret: string = process.env.WEBHOOK_SECRET;
+  // const payload = await req.json();
+  // const body = JSON.stringify(payload);
+  const body = await req.text();
 
-  const sivx = new Webhook(webhookSecret);
+  const sivx = new Webhook(process.env.WEBHOOK_SECRET);
 
   let msg: WebhookEvent;
 
