@@ -4,14 +4,16 @@ import Heading from "@/components/typography/Heading";
 import React from "react";
 
 const page = async () => {
-  <div>
-    <Heading>Khám phá</Heading>
-    <CourseGrid>
-      <CourseItem></CourseItem>
-      <CourseItem></CourseItem>
-      <CourseItem></CourseItem>
-    </CourseGrid>
-  </div>;
+  return (
+    <div>
+      <Heading>Khám phá</Heading>
+      <CourseGrid>
+        <CourseItem></CourseItem>
+        <CourseItem></CourseItem>
+        <CourseItem></CourseItem>
+      </CourseGrid>
+    </div>
+  );
 };
 
 export default page;

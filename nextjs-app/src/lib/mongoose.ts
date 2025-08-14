@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 // singleton connection
 let isConnected: boolean = false;
-export const connectToDatabsae = async () => {
+export const connectToDatabase = async () => {
   if (!process.env.MONGODB_URL) {
     throw new Error("MONGODB_URL is not set");
   }
