@@ -1,7 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @theme {
-  --color-primary: #0abab5;
+  --color-primary: #9929ea;
   --color-grayDarkest: #131316;
   --color-grayDarker: #212126;
   --color-grayDark: #9394a1;
@@ -19,6 +19,11 @@
 @layer base {
   body {
     @apply bg-gray-100 dark:bg-grayDarkest;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 @layer components {
