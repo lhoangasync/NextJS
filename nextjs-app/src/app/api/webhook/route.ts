@@ -4,7 +4,6 @@ import { NextResponse } from "next/server";
 import { Webhook } from "svix";
 
 export async function POST(req: Request) {
-  console.log("POSTTTTTT");
   const svix_id = req.headers.get("svix-id") ?? "";
   const svix_timestamp = req.headers.get("svix-timestamp") ?? "";
   const svix_signature = req.headers.get("svix-signature") ?? "";
@@ -39,8 +38,6 @@ export async function POST(req: Request) {
   if (eventType === "user.created") {
     // create user to database
     const { id, username, email_addresses, image_url } = msg.data;
-    console.log("📩 Webhook - email_addresses:", email_addresses);
-    console.log("📩 Webhook - lấy email:", email_addresses?.[0]?.email_address);
     const user = await createUser({
       username: username!,
       name: username!,
