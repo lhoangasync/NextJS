@@ -1,7 +1,8 @@
+import CourseManage from "@/components/course/CourseManage";
 import React from "react";
 
 const page = () => {
-  return <div>Manage Course</div>;
+  return <CourseManage></CourseManage>;
 };
 
 export default page;

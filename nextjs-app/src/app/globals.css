@@ -1,5 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@import "uploadthing/tw/v4";
+@source "../node_modules/@uploadthing/dist";
 @theme {
   --color-primary: #9929ea;
   --color-grayDarkest: #131316;
@@ -36,6 +39,15 @@
     to {
       stroke-dashoffset: 0;
     }
+  }
+}
+
+@layer utilities {
+  .bgDarkMode {
+    @apply bg-white dark:bg-grayDarker;
+  }
+  .borderDarkMode {
+    @apply border-gray-200 dark:border-gray-200/10;
   }
 }
 /* shadcn */

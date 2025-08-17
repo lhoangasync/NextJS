@@ -7,7 +7,7 @@ import { revalidatePath } from "next/cache";
 /// FETCHING
 export async function getAllCourses(): Promise<ICourse[] | undefined> {
   try {
-    connectToDatabase();
+    await connectToDatabase();
     const courses = await Course.find();
     return courses;
   } catch (error) {
@@ -15,7 +15,11 @@ export async function getAllCourses(): Promise<ICourse[] | undefined> {
   }
 }
 
-export async function getCourseBySlug({ slug }: { slug: string }) {
+export async function getCourseBySlug({
+  slug,
+}: {
+  slug: string;
+}): Promise<ICourse | undefined> {
   try {
     connectToDatabase();
     const findCourse = await Course.findOne({ slug });
@@ -24,6 +28,7 @@ export async function getCourseBySlug({ slug }: { slug: string }) {
     console.log("fetching course", error);
   }
 }
+
 //CRUD
 export async function createCourse(params: TCreateCourseParams) {
   try {
