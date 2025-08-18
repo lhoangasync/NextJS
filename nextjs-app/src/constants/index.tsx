@@ -95,4 +95,6 @@ export const commonClassName = {
     "bg-current/10 border border-current rounded-md font-medium px-3 py-1 text-xs",
   action:
     "size-8 rounded-md border flex items-center justify-center p-2  text-gray-500 hover:border-gray-200 dark:bg-transparent border-gray-500/10 dark:hover:border-gray-100/10 cursor-pointer",
+  paginationButton:
+    "cursor-pointer size-10 rounded-md borderDarkMode bgDarkMode border flex items-center justify-center hover:!border-primary transition-all hover:text-primary",
 };

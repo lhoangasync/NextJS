@@ -16,7 +16,7 @@ const Sidebar = () => {
         <span className="text-primary">U</span>
         cademy
       </a>
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-1">
         {menuItems.map((item, index) => (
           <MenuItem
             key={index}

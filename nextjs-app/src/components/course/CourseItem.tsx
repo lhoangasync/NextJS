@@ -26,7 +26,7 @@ const CourseItem = ({ data }: { data: ICourse }) => {
     <div className="bg-white border border-gray-200 p-4 rounded-2xl dark:bg-grayDarker dark:border-gray-200/10">
       <Link href={`/course/${data.slug}`} className="block h-[180px] relative">
         <Image
-          src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2F0fGVufDB8fDB8fHww"
+          src={data.image}
           alt=""
           width={300}
           height={200}
@@ -52,7 +52,7 @@ const CourseItem = ({ data }: { data: ICourse }) => {
           ))}
 
           <span className="font-bold text-base text-primary ml-auto">
-            {data.price}
+            {new Intl.NumberFormat("vi-VN").format(data.price)}đ
           </span>
         </div>
 

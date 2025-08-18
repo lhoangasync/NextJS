@@ -1,5 +1,9 @@
 import { ICourse } from "@/database/course.model";
 
+export type PageProps = {
+  params: { slug: string };
+};
+
 export type TActiveLinkProps = {
   url: string;
   children: React.ReactNode;
@@ -29,4 +33,5 @@ export type TCreateCourseParams = {
 export type TUpdateCourseParams = {
   slug: string;
   updateData: Partial<ICourse>;
+  path?: string;
 };

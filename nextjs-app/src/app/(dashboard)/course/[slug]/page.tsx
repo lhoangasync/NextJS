@@ -2,16 +2,11 @@ import { IconCheck, IconPlay, IconStudy, IconUsers } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { courseLevelTitle } from "@/constants";
 import { getCourseBySlug } from "@/lib/actions/course.actions";
+import { PageProps } from "@/types";
 import Image from "next/image";
 import React from "react";
 
-const page = async ({
-  params,
-}: {
-  params: {
-    slug: string;
-  };
-}) => {
+const page = async ({ params }: PageProps) => {
   const { slug } = await params;
   const data = await getCourseBySlug({
     slug: slug,
@@ -93,10 +88,10 @@ const page = async ({
         <div className="bg-white rounded-lg p-5">
           <div className="flex items-center gap-2 mb-3">
             <strong className="text-primary text-xl font-bold">
-              {data.price}
+              {new Intl.NumberFormat("vi-VN").format(data.price)}
             </strong>
             <span className="text-slate-400 line-through text-sm">
-              {data.sale_price}
+              {new Intl.NumberFormat("vi-VN").format(data.sale_price)}
             </span>
             <span className="ml-auto inline-block px-3 py-1 rounded-lg text-primary bg-primary/10 font-semibold text-sm">
               {100 - Math.floor((data.price / data.sale_price) * 100)}%
